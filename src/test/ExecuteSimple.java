@@ -29,7 +29,7 @@ public class ExecuteSimple extends StudyTest {
 			context.start();
 			
 			boolean done = false;
-			for (;;) {}
+			this.wait();
 		} catch (ParseException e) { 
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
@@ -42,10 +42,28 @@ public class ExecuteSimple extends StudyTest {
 		return new RouteBuilder() {
 		    public void configure() {
 		    	study.setTicker(ticker);
-		    	from("http://ichart.finance.yahoo.com/table.csv?s=%5EGDAXI&amp;d=8&amp;e=25&amp;f=2011&amp;g=d&amp;a=10&amp;b=26&amp;c=1990&amp;ignore=.csv").to("");
+		    	from("file://C:/input?fileName="+fileName+"&noop=true").unmarshal().csv().split().simple("body").bean(study, "load");
 		    }
 		};
 
 	}
+
+	public void run(Simple study, int type) {
+		study.setType(type);
+		study.processQuotes();					
+		printResults(study);
+		study.reset();		
+	}
+	
+	public void printTestResults(Study study) {
+		
+		Simple simpleStudy = (Simple)study;
+		
+		System.out.println("Number Quotes: "+simpleStudy.getNumberQuotes());
+		System.out.println("Number Processed: "+simpleStudy.getNumProcessed());
+		System.out.println("Gain: "+decFormat.format(simpleStudy.getTotalIncrement()));
+		System.out.println("Prob: "+decFormat.format(simpleStudy.getProb()*100));
+	}
+
 	
 }

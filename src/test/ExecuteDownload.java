@@ -4,8 +4,12 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import org.apache.camel.CamelContext;
+import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.component.http.HttpConstants;
 import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.commons.httpclient.cookie.CookiePolicy;
+import org.apache.commons.httpclient.params.DefaultHttpParams;
 import org.springframework.expression.ParseException;
 
 import project.study.Simple;
@@ -25,8 +29,10 @@ public class ExecuteDownload {
 	public void test() {
 
 		try {
-			context.addRoutes(buildRoute(tickerIbex, fileNameIbex, simpleStudyIbex));
+			context.addRoutes(this.buildRoute());
 			context.start();
+			
+			Thread.sleep(1000000);
 			
 		} catch (ParseException e) { 
 			System.out.println(e.getMessage());
@@ -36,11 +42,21 @@ public class ExecuteDownload {
 
 	}
 	
-	public RouteBuilder buildRoute(final String ticker, final String fileName, final Simple study) {
+	public RouteBuilder buildRoute() {
 		return new RouteBuilder() {
 		    public void configure() {
-		    	study.setTicker(ticker);
-		    	from("file://C:/input?fileName="+fileName+"&delete=false").unmarshal().csv().split().simple("body").bean(study, "load");
+		    	
+		    	String url = "http://ichart.finance.yahoo.com/table.csv?s=%5EFTSE&amp;d=8&amp;e=30&amp;f=2011&amp;g=d&amp;a=3&amp;b=2&amp;c=1984&amp;ignore=.csv";
+		    	
+		    	GetUrl geturl = new GetUrl();
+		    	
+		    	DefaultHttpParams.getDefaultParams().setParameter("http.protocol.cookie-policy",
+		    			CookiePolicy.BROWSER_COMPATIBILITY);
+		    	
+		    	ProducerTemplate template;
+		    	
+		    	from("direct:a")
+		    	.to("file://C:/input/data?fileName=target.csv");
 		    }
 		};
 

@@ -40,7 +40,7 @@ public class ExecuteDoWIbex extends StudyTest{
 		return new RouteBuilder() {
 		    public void configure() {
 		    	study.setTicker(ticker);
-		    	from("file://C:/input?fileName="+fileName+"&delete=false").unmarshal().csv().split().simple("body").bean(study, "load");
+		    	from("file://C:/input?fileName="+fileName+"&noop=true").unmarshal().csv().split().simple("body").bean(study, "load");
 		    }
 		};
 
