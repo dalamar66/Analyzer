@@ -1,0 +1,56 @@
+[33mcommit 415db2ada3647870d0d098d5e44efe21bc730963[m
+Author: dalamar66 <dalamar01977@gmail.com>
+Date:   Sun Oct 2 21:56:37 2011 +0100
+
+    Initial
+
+[1mdiff --git a/.classpath b/.classpath[m
+[1mindex 7b4ce07..856faee 100644[m
+[1m--- a/.classpath[m
+[1m+++ b/.classpath[m
+[36m@@ -131,5 +131,13 @@[m
+ 	<classpathentry kind="lib" path="C:/httpcomponents-client-4.1.2-bin/httpcomponents-client-4.1.2/lib/httpcore-4.1.2.jar"/>[m
+ 	<classpathentry kind="lib" path="C:/httpcomponents-client-4.1.2-bin/httpcomponents-client-4.1.2/lib/httpmime-4.1.2.jar"/>[m
+ 	<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/commons-httpclient-3.1.jar"/>[m
+[32m+[m	[32m<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/poi-bin-3.8-beta4-20110826/poi-3.8-beta4/poi-excelant-3.8-beta4-20110826.jar"/>[m[41m[m
+[32m+[m	[32m<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/poi-bin-3.8-beta4-20110826/poi-3.8-beta4/poi-ooxml-3.8-beta4-20110826.jar"/>[m[41m[m
+[32m+[m	[32m<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/poi-bin-3.8-beta4-20110826/poi-3.8-beta4/poi-ooxml-schemas-3.8-beta4-20110826.jar"/>[m[41m[m
+[32m+[m	[32m<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/poi-bin-3.8-beta4-20110826/poi-3.8-beta4/poi-scratchpad-3.8-beta4-20110826.jar"/>[m[41m[m
+[32m+[m	[32m<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/poi-bin-3.8-beta4-20110826/poi-3.8-beta4/poi-3.8-beta4-20110826.jar"/>[m[41m[m
+[32m+[m	[32m<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/poi-bin-3.8-beta4-20110826/poi-3.8-beta4/ooxml-lib/dom4j-1.6.1.jar"/>[m[41m[m
+[32m+[m	[32m<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/poi-bin-3.8-beta4-20110826/poi-3.8-beta4/ooxml-lib/stax-api-1.0.1.jar"/>[m[41m[m
+[32m+[m	[32m<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/poi-bin-3.8-beta4-20110826/poi-3.8-beta4/ooxml-lib/xmlbeans-2.3.0.jar"/>[m[41m[m
+ 	<classpathentry kind="output" path="bin"/>[m
+ </classpath>[m
+[1mdiff --git a/bin/project/execute/EDayOfTheYear$1.class b/bin/project/execute/EDayOfTheYear$1.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e2f1924[m
+Binary files /dev/null and b/bin/project/execute/EDayOfTheYear$1.class differ
+[1mdiff --git a/bin/project/execute/EDayOfTheYear.class b/bin/project/execute/EDayOfTheYear.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..15d7398[m
+Binary files /dev/null and b/bin/project/execute/EDayOfTheYear.class differ
+[1mdiff --git a/bin/project/execute/EDownload$1.class b/bin/project/execute/EDownload$1.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..de363be[m
+Binary files /dev/null and b/bin/project/execute/EDownload$1.class differ
+[1mdiff --git a/bin/project/execute/EDownload.class b/bin/project/execute/EDownload.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..498f64e[m
+Binary files /dev/null and b/bin/project/execute/EDownload.class differ
+[1mdiff --git a/bin/project/execute/EGap$1.class b/bin/project/execute/EGap$1.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2549903[m
+Binary files /dev/null and b/bin/project/execute/EGap$1.class differ
+[1mdiff --git a/bin/project/execute/EGap.class b/bin/project/execute/EGap.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a22ca49[m
+Binary files /dev/null and b/bin/project/execute/EGap.class differ
+[1mdiff --git a/bin/project/execute/ESimple$1.class b/bin/project/execute/ESimple$1.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7017b28[m
+Binary files /dev/null and b/bin/project/execute/ESimple$1.class differ
+[1mdiff --git a/bin/project/execute/ESimple.class b/bin/project/execute/ESimple.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..af94a46[m
+Binary fi
