@@ -1,13 +1,11 @@
 package test.formatter;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Iterator;
-import java.util.List;
 
-import org.apache.camel.builder.RouteBuilder;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFFont;
@@ -15,47 +13,43 @@ import org.apache.poi.hssf.usermodel.HSSFRichTextString;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.springframework.expression.ParseException;
 
-import project.execute.core.StudyTest;
-import project.study.Simple;
-import project.study.core.Study;
+import project.study.core.Constants;
 
 public class FSimple {
 
 	private ArrayList<Data> data = new ArrayList();
-	public static final String WIDGET_LIST_KEY = "widgetList";
-	protected static final short WIDGET_NAME_COLUMN = 0;
-	protected static final short WIDGET_SIZE_COLUMN = 1;
+
 	HSSFWorkbook workbook;
 
 	public void formatter() {
-		HSSFSheet sheet = workbook.createSheet("Widget List");
-		sheet.setDefaultColumnWidth((short) 12);
+		workbook = new HSSFWorkbook();
+		HSSFSheet sheet = workbook.createSheet("Java Class Info");
+		sheet.setColumnWidth((short) 0, (short) 10000);
 
-		// GETCELL: getCell(SHEET, ROW, COLUMN);
-		short currentRow = 0;
+		HSSFRow row = sheet.createRow((short) 0);
 
-		// WRITE ROW FOR HEADER
-		HSSFCell header0 = getCell(sheet, currentRow, WIDGET_NAME_COLUMN, false);
-		// setText(header0, "NAME");
+		HSSFFont font = workbook.createFont();
+		font.setColor(HSSFFont.COLOR_RED);
+		font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
+		// Create the style
+		HSSFCellStyle cellStyle = workbook.createCellStyle();
+		cellStyle.setFont(font);
 
-		HSSFCell header1 = getCell(sheet, currentRow, WIDGET_SIZE_COLUMN, false);
-		// setText(header1, "SIZE");
+		HSSFCell cell = row.createCell((short) 0);
+		cell.setCellStyle(cellStyle);
+		cell.setCellType(HSSFCell.CELL_TYPE_STRING);
+		cell.setCellValue("Class Name ");
 
-		/*
-		 * List widgetList = (List) model.get(WIDGET_LIST_KEY); Iterator
-		 * widgetListIterator = widgetList.iterator();
-		 * 
-		 * while (widgetListIterator.hasNext()) { currentRow++; Widget widget =
-		 * (Widget) widgetListIterator.next(); HSSFRow row =
-		 * sheet.createRow(currentRow); row.createCell(WIDGET_NAME_COLUMN)
-		 * .setCellValue(widget.getName()); row.createCell(WIDGET_SIZE_COLUMN)
-		 * .setCellValue(widget.getSize()); } }
-		 */
 	}
 
-	public void writeToFile() {
+	public void writeToFile() throws IOException {
+
+		FileOutputStream fOut = new FileOutputStream(Constants.PATH
+				+ "/Results/test1.xsl");
+		workbook.write(fOut);
+		fOut.flush();
+		fOut.close();
 
 	}
 
