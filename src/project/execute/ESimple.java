@@ -31,7 +31,9 @@ public class ESimple extends StudyTest {
 			context.start();
 			
 			boolean done = false;
-			this.wait();
+			for (;;) {
+				Thread.sleep(10000);
+			}
 		} catch (ParseException e) { 
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
