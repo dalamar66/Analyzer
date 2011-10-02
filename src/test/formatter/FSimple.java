@@ -22,7 +22,7 @@ public class FSimple {
 
 	HSSFWorkbook workbook;
 
-	public void formatter() {
+	public void format() {
 		workbook = new HSSFWorkbook();
 		HSSFSheet sheet = workbook.createSheet("Java Class Info");
 		sheet.setColumnWidth((short) 0, (short) 10000);

@@ -9,6 +9,7 @@ import org.springframework.expression.ParseException;
 import project.execute.core.StudyTest;
 import project.study.Simple;
 import project.study.core.Study;
+import test.formatter.FSimple;
 
 public class ESimple extends StudyTest { 
 	
@@ -64,6 +65,14 @@ public class ESimple extends StudyTest {
 		System.out.println("Number Processed: "+simpleStudy.getNumProcessed());
 		System.out.println("Gain: "+decFormat.format(simpleStudy.getTotalIncrement()));
 		System.out.println("Prob: "+decFormat.format(simpleStudy.getProb()*100));
+		
+		FSimple formatter = new FSimple();
+		formatter.format();
+		try {
+			formatter.writeToFile();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	
