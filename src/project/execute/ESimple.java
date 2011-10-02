@@ -1,4 +1,4 @@
-package test;
+package project.execute;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -6,14 +6,15 @@ import java.util.GregorianCalendar;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.expression.ParseException;
 
+import project.execute.core.StudyTest;
 import project.study.Simple;
 import project.study.core.Study;
 
-public class ExecuteSimple extends StudyTest { 
+public class ESimple extends StudyTest { 
 	
 	public static void main(String[] args) {
 
-		ExecuteSimple exec = new ExecuteSimple();
+		ESimple exec = new ESimple();
 		exec.test();
 				
 	}

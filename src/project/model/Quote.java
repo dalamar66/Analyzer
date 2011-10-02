@@ -7,10 +7,11 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+
+import project.execute.EDayOfTheYear;
+import project.execute.ESimple;
+import project.execute.core.StudyTest;
 import project.util.HashCodeUtil;
-import test.ExecuteDoWIbex;
-import test.ExecuteSimple;
-import test.StudyTest;
 
 public class Quote implements Comparable<Quote> {
 
@@ -97,7 +98,7 @@ public class Quote implements Comparable<Quote> {
         quote.setLow(Double.parseDouble(data.get(3)));
         quote.setClose(Double.parseDouble(data.get(4)));
         quote.setVolume(Integer.parseInt(data.get(5)));
-        StudyTest.setLoaded(ExecuteDoWIbex.getLoaded() + 1);
+        StudyTest.setLoaded(EDayOfTheYear.getLoaded() + 1);
         //System.out.println("Loaded Quote "+ExecuteDoWIbex.loaded+": "+quote.getDate().getTime());
         return quote;
     }

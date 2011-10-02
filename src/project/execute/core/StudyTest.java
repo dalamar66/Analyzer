@@ -1,4 +1,4 @@
-package test;
+package project.execute.core;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
@@ -13,13 +13,13 @@ public abstract class StudyTest {
 	
 	abstract public void printTestResults(Study study);
 
-	private static int loaded = 0;
+	protected static int loaded = 0;
 	
-	static CamelContext context = new DefaultCamelContext();
+	protected static CamelContext context = new DefaultCamelContext();
 
-	DecimalFormat decFormat = new DecimalFormat("##.####");
+	protected DecimalFormat decFormat = new DecimalFormat("##.####");
 
-	DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT);
+	protected DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT);
 
 	public void printResults(Simple study) {
 		

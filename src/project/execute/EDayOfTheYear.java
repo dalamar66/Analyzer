@@ -1,13 +1,14 @@
-package test;
+package project.execute;
 
 import org.apache.camel.builder.RouteBuilder;
 
+import project.execute.core.StudyTest;
 import project.study.DayOfTheWeek;	
 import project.study.Simple;
 import project.study.core.DataTicker;
 import project.study.core.Study;
 
-public class ExecuteDoWIbex extends StudyTest{ 
+public class EDayOfTheYear extends StudyTest{ 
 	
 	static DayOfTheWeek study = new DayOfTheWeek();
 	
