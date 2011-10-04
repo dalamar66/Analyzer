@@ -140,5 +140,6 @@
 	<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/poi-bin-3.8-beta4-20110826/poi-3.8-beta4/ooxml-lib/stax-api-1.0.1.jar"/>
 	<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/poi-bin-3.8-beta4-20110826/poi-3.8-beta4/ooxml-lib/xmlbeans-2.3.0.jar"/>
 	<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/commons-csv-20070724 (1)/commons-csv-20070724/commons-csv-20070724.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Administrator/My Documents/Downloads/poi-bin-3.8-beta4-20110826/poi-3.8-beta4/poi-examples-3.8-beta4-20110826.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
